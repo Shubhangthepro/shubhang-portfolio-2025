@@ -6,6 +6,6 @@ An interactive and dynamic personal portfolio showcasing my skills, projects, ac
 
 ## 🚀 Live Site
 
-🔗 
+🔗 https://shubhang-portfolio.netlify.app/
 
 ---
