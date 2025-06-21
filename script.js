@@ -41,3 +41,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function toggleMenu() {
+  const navLinks = document.getElementById("navLinks");
+  const toggleIcon = document.getElementById("menuToggle").firstElementChild;
+
+  navLinks.classList.toggle("active");
+
+  // Toggle hamburger <-> cross
+  if (navLinks.classList.contains("active")) {
+    toggleIcon.classList.remove("fa-bars");
+    toggleIcon.classList.add("fa-times");
+  } else {
+    toggleIcon.classList.remove("fa-times");
+    toggleIcon.classList.add("fa-bars");
+  }
+}
+
+// Auto-close menu on link click (mobile only)
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    const navLinks = document.getElementById("navLinks");
+    const toggleIcon = document.getElementById("menuToggle").firstElementChild;
+
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove("active");
+      toggleIcon.classList.remove("fa-times");
+      toggleIcon.classList.add("fa-bars");
+    }
+  });
+});
